@@ -33,31 +33,59 @@
     padding: 0 4px;
   }
   
-  /* Create four equal columns that sits next to each other */
-  .column {
-    flex: 25%;
-    max-width: 25%;
-    padding: 0 4px;
+  .clrd-font{
+    background: #FF512F;
+    background: -webkit-linear-gradient(to right, #F09819, #FF512F);
+    background: linear-gradient(to right, #F09819, #FF512F);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  
+  }
+
+  .single_portfolio_text{
+    display:inline-block;
+    padding:0;
+    position:relative;
+    overflow:hidden;
+  
   }
   
-  .column img {
-    margin-top: 8px;
-    vertical-align: middle;
-    width: 100%;
+  .single_portfolio_text img{
+    width:100%;
   }
   
-  /* Responsive layout - makes a two column-layout instead of four columns */
-  @media screen and (max-width: 800px) {
-    .column {
-      flex: 50%;
-      max-width: 50%;
-    }
+  .single_portfolio_text:hover .portfolio_images_overlay{
+    top:5%;
+    left: 5%;
   }
   
-  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 600px) {
-    .column {
-      flex: 100%;
-      max-width: 100%;
-    }
+  .portfolio_images_overlay{
+    width: 90%;
+    height: 90%;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    margin: 0 auto;
+    top: -100%;
+    left: 5%;
+    position: absolute;
+    transition:.6s;
+    
+  }
+  .portfolio_images_overlay h6{
+    color: #fff;
+    font-size: 13px;
+    font-weight: 400;
+    border: 2px solid #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  .portfolio_images_overlay .product_price{
+    font-size: 35px;
+    color: #fff;
+    font-weight:800;
+    line-height:30px;
+  }
+  .portfolio_images_overlay .product_price i{
+      margin-right: -10px;
   }
