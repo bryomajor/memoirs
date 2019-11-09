@@ -50,3 +50,22 @@ class LocationTestClass(TestCase):
         mombasa.save_location()
         locations = Location.objects.all()
         self.assertTrue(len(locations), 2)
+
+
+class ImageTestClass(TestCase):
+    '''
+    Test case for the bahaviours in the image model
+    '''
+    # Set up method
+    def setUp(self):
+        # Creating a new location and saving it
+        self.mombasa = Location(location_name='Mombasa')
+        self.mombasa.save_location()
+
+        # Creating a new category and saving it
+        self.new_category = category(category_name='food')
+        self.new_category.save_category()
+
+        self.new_image = Image(image_name = 'At the beach', image_desc = 'The day I visited Bamburi beach while in Mombasa', location = self.mombasa)
+
+        
