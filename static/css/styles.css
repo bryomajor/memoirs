@@ -77,25 +77,6 @@
     left: 5%;
     position: absolute;
     transition:.6s;
-    
-  }
-  .portfolio_images_overlay h6{
-    color: #fff;
-    font-size: 13px;
-    font-weight: 400;
-    border: 2px solid #fff;
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-  
-  .portfolio_images_overlay .product_price{
-    font-size: 35px;
-    color: #fff;
-    font-weight:800;
-    line-height:30px;
-  }
-  .portfolio_images_overlay .product_price i{
-      margin-right: -10px;
   }
 
   @media (min-width:769px) and (max-width:991px) {
@@ -130,4 +111,8 @@
 
   .navbar {
     margin-bottom: 0;
+  }
+
+  .text-white {
+    color: white;
   }
