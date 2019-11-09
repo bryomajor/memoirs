@@ -1,20 +1,42 @@
 {% extends 'all-photos/base.html' %}
 
 {% block content %}
-<h1 class="text-center">Yoooooooooo</h1>
-<!-- Photo Grid -->
-<div class="row">
-    <div class="column">
-        <img src="" style="width:100%">
+<script>
+    function CopyFunction() {
+        var copyText = document.getElementById("imagelink");
+        copyText.select();
+        document.execCommand("copy");
+        alert("Copied the text: " + copyText.value);
+    }
+</script>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center">Welcome To My Memoirs</h1>
+        </div>
     </div>
-    <div class="column">
-        <img src="" style="width:100%">
-    </div>
-    <div class="column">
-        <img src="" style="width:100%">
-    </div>
-    <div class="column">
-        <img src="" style="width:100%">
+    <div class="row">
+        {% for photo in photos %}
+        <div class="col-md-3 single_portfolio_text">
+            <img src="{{photo.photo.url}}" alt="" class="img-responsive" />
+
+            <div class="portfolio_images_overlay text-center">
+                <h6 class="clrd-font">{{photo.image_name}}</h6>
+                <h6 class="clrd-font"><span style="color: rgb(134, 123, 123);">Location:</span>{{photo.location}}</h6>
+
+                <input type="text" id="imagelink" class="form-control input-sm" value="127.0.0.1:800{{photo.photo.url}}"
+                    class="hidden">
+                <button class="btn btn-primary" onclick="CopyFunction()">
+                    <i class="fa fa-copy" style="color: #d6962c"></i> Copy Link
+                </button>
+
+                <a class="fancybox btn btn-primary" rel="gallery" href="{{photo.photo.url}}"><i style="color:#d6962c"
+                        class="fa fa-eye"></i> View Image</a>
+            </div>
+        </div>
+        {% endfor %}
     </div>
 </div>
+
 {% endblock %}
