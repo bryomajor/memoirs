@@ -10,29 +10,23 @@
     }
 </script>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h1 class="text-center">Welcome To My Memoirs</h1>
-        </div>
-    </div>
+<div class="container-fluid">
     <div class="row">
         {% for photo in photos %}
         <div class="col-md-3 single_portfolio_text">
             <img src="{{photo.photo.url}}" alt="" class="img-responsive" />
 
             <div class="portfolio_images_overlay text-center">
-                <h6 class="clrd-font">{{photo.image_name}}</h6>
-                <h6 class="clrd-font"><span style="color: rgb(134, 123, 123);">Location:</span>{{photo.location}}</h6>
+                <h6 class="text-white">{{photo.image_name}}</h6>
+                <h6 class="text-white">Location: {{photo.location}}</h6>
+
+                <p>{{photo.image_desc}}</p>
 
                 <input type="text" id="imagelink" class="form-control input-sm" value="127.0.0.1:800{{photo.photo.url}}"
                     class="hidden">
-                <button class="btn btn-primary" onclick="CopyFunction()">
-                    <i class="fa fa-copy" style="color: #d6962c"></i> Copy Link
-                </button>
+                <button class="btn btn-primary" onclick="CopyFunction()">Copy Link</button>
 
-                <a class="fancybox btn btn-primary" rel="gallery" href="{{photo.photo.url}}"><i style="color:#d6962c"
-                        class="fa fa-eye"></i> View Image</a>
+                <a class="fancybox btn btn-primary" rel="gallery" href="{{photo.photo.url}}">View Image</a>
             </div>
         </div>
         {% endfor %}

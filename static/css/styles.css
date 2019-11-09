@@ -13,6 +13,14 @@
     position: relative;
    }
 
+   body {
+     background-color: black;
+   }
+
+   .navbar-inverse {
+     background-color: black;
+   }
+
    .main-container {
     min-height: 100vh; /* will cover the 100% of viewport */
     overflow: hidden;
@@ -33,7 +41,7 @@
     padding: 0 4px;
   }
   
-  .clrd-font{
+  .details{
     background: #FF512F;
     background: -webkit-linear-gradient(to right, #F09819, #FF512F);
     background: linear-gradient(to right, #F09819, #FF512F);
@@ -88,4 +96,38 @@
   }
   .portfolio_images_overlay .product_price i{
       margin-right: -10px;
+  }
+
+  @media (min-width:769px) and (max-width:991px) {
+    .portfolio_images_overlay {
+      padding: 0px;
+    }
+  }
+  @media (max-width:768px) {
+    .portfolio_images_overlay{
+      padding: 170px 20px;
+    }
+  }
+  @media (max-width:580px) {
+    .portfolio_images_overlay{
+      padding: 100px 20px;
+    }
+  }
+  @media (max-width:480px) {
+    .portfolio_images_overlay{
+      padding: 40px 20px;
+    }
+  }
+  @media (max-width:320px) {
+    .portfolio_images_overlay{
+      padding: 20px;
+    }
+  }
+
+  .row {
+    margin-top: 0;
+  }
+
+  .navbar {
+    margin-bottom: 0;
   }
