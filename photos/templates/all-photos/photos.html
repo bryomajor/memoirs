@@ -19,14 +19,17 @@
             <div class="portfolio_images_overlay text-center">
                 <h3 class="text-white">{{photo.image_name}}</h3>
                 <h5 class="text-white">Location: {{photo.location}}</h5>
+                <hr>
 
                 <p class="text-white">{{photo.image_desc}}</p>
 
                 <input type="text" id="imagelink" class="form-control input-sm" value="127.0.0.1:800{{photo.photo.url}}"
                     class="hidden">
-                <button class="btn btn-primary" onclick="CopyFunction()">Copy Link</button>
+                <div class="top">
+                    <button class="btn btn-success" onclick="CopyFunction()">Copy Link</button>
 
-                <a class="fancybox btn btn-primary" rel="gallery" href="{{photo.photo.url}}">View Image</a>
+                    <a class="fancybox btn btn-custom" rel="gallery" href="{{photo.photo.url}}">View Image</a>
+                </div>
             </div>
         </div>
         {% endfor %}
