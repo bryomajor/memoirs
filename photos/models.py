@@ -19,7 +19,7 @@ class Location(models.Model):
 
     @classmethod
     def delete_location(cls, id):
-        return self.delete()
+        return cls.objects.filter(id = id).delete()
 
 
 class category(models.Model):
@@ -44,7 +44,7 @@ class Image(models.Model):
     '''
     image_name = models.CharField(max_length=30)
     image_desc = models.TextField()
-    location = models.ForeignKey(Location)
+    location = models.ForeignKey(Location, on_delete=models.CASCADE)
     category = models.ManyToManyField(category)
     post_date = models.DateTimeField(auto_now_add=True)
     photo = models.ImageField(upload_to = 'photos/')
@@ -87,7 +87,7 @@ class Image(models.Model):
         '''
         A method to return all photos that are a specific category
         '''
-        return cls.objects.filter(category = search_term)
+        return cls.objects.filter(category__category_name__icontains = search_term)
 
     @classmethod
     def filter_by_location(cls, location):
