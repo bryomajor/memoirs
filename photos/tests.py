@@ -38,9 +38,9 @@ class LocationTestClass(TestCase):
         '''
         Method to check if we can delete a saved location
         '''
-        self.new_location.delete_location()
+        Location.delete_location(self.new_location.id)
         locations = Location.objects.all()
-        self.assertTrue(len(locations) is 0)
+        self.assertTrue(len(locations) == 0)
 
     def test_display_all(self):
         '''
@@ -68,4 +68,46 @@ class ImageTestClass(TestCase):
 
         self.new_image = Image(image_name = 'At the beach', image_desc = 'The day I visited Bamburi beach while in Mombasa', location = self.mombasa)
 
-        
+    def test_instance(self):
+        self.assertTrue(isinstance(self.new_image, Image))
+
+    def test_save_method(self):
+        self.new_image.save_photo()
+        photos = Image.objects.all()
+        self.assertTrue(len(photos) > 0)
+
+    def test_delete_method(self):
+        Image.delete_photo(self.new_image.id)
+        photos = Image.objects.all()
+        self.assertTrue(len(photos) == 0)
+
+    def test_get_photo_by_id(self):
+        photo = Image.get_photo_by_id(self.new_image.id)
+        self.assertEqual(photo, self.new_image)
+
+    def test_search_photo_by_category(self):
+        photos = Image.search_photo_by_category("food")
+        self.assertFalse(len(photos) > 0)
+
+    def test_filter_by_location(self):
+        pass
+
+
+class categoryTestClass(TestCase):
+    '''
+    A class that tests the category model behaviour
+    '''
+    def setUp(self):
+        '''
+        Creating a new instance
+        '''
+        self.category = category(category_name = 'food')
+        self.category.save()
+
+    def test_instance(self):
+        self.assertTrue(isinstance(self.category, category))
+
+
+    def test_save_method(self):
+        categories = category.objects.all()
+        self.assertTrue(len(categories) > 0)
