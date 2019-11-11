@@ -80,18 +80,20 @@ class Image(models.Model):
         '''
         A method to get a photo bases on the id
         '''
-        return cls.objects.filter(id = id)
+        return cls.objects.filter(id = id).all()
 
     @classmethod
-    def search_photo_by_category(cls, search_term):
+    def search_photo_by_category(cls, category):
         '''
         A method to return all photos that are a specific category
         '''
-        return cls.objects.filter(category__category_name__icontains = search_term)
+        gallery = cls.objects.filter(category__category_name__icontains = category)
+        return gallery
 
     @classmethod
-    def filter_by_location(cls, location):
+    def filter_by_location(cls, search_term):
         '''
         A method to filter all photos based on a location
         '''
-        return cls.objects.filter(location = location)
+        locations = cls.objects.filter(location__location_name__icontains=search_term)
+        return locations
