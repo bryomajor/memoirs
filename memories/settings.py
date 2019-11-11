@@ -78,8 +78,12 @@ WSGI_APPLICATION = 'memories.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default=config('DATABASE_URL'))
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'memoirs',
+        'USER': 'moringa',
+        'PASSWORD': 'p@$$w0rd',
+    }
 }
 
 
