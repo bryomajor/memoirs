@@ -2,7 +2,7 @@
 
 
 ## Description
-A personal gallery application that displays my photos for others to see. You can visit the live site on `https://memoirs.herokuapp.com/`
+A personal gallery application that displays my photos for others to see. You can visit the live site on `https://my-memoirs.herokuapp.com/`
 
 
 ## Author
@@ -16,10 +16,11 @@ A personal gallery application that displays my photos for others to see. You ca
 As a user of the web application you will be able to:
 
 1. See all posted photos
-2. See each photo's description and location on hover.
-3. Be able to copy a photo's url to the clipboard
-4. Click on `view image` to expand a photo
-5. Search for a photo
+2. View photos by location
+3. See each photo's description and location on hover.
+4. Be able to copy a photo's url to the clipboard
+5. Click on `view image` to expand a photo
+6. Search for a photo by category e.g. _outdoor_, _photoshoot_
 
 ## Specifications
 | Behavior            | Input                         | Output                        | 
