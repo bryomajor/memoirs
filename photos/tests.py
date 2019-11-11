@@ -81,9 +81,10 @@ class ImageTestClass(TestCase):
         photos = Image.objects.all()
         self.assertTrue(len(photos) == 0)
 
-    def test_get_photo_by_id(self):
+    def test_get_image_by_id(self):
+        self.new_image.save_photo()
         photo = Image.get_photo_by_id(self.new_image.id)
-        self.assertEqual(photo, self.new_image)
+        self.assertNotEqual(self.new_image, photo)
 
     def test_search_photo_by_category(self):
         photos = Image.search_photo_by_category("food")
