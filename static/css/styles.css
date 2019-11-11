@@ -41,15 +41,6 @@
     padding: 0 4px;
   }
   
-  .details{
-    background: #FF512F;
-    background: -webkit-linear-gradient(to right, #F09819, #FF512F);
-    background: linear-gradient(to right, #F09819, #FF512F);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  
-  }
-
   .single_portfolio_text{
     display:inline-block;
     padding:0;
@@ -127,4 +118,8 @@
 
   a {
     color: #fff !important;
+  }
+
+  .navbar-nav>li>.dropdown-menu {
+    background-color: black !important;
   }
